@@ -90,11 +90,27 @@ class ProjectItem extends Component {
         this.configure();
         this.renderContent();
     }
-    configure() { }
+    get persons() {
+        if (this.project.people === 1) {
+            return "1 person";
+        }
+        else {
+            return `${this.project.people} persons`;
+        }
+    }
+    dragStartHandler(event) {
+        console.log(event);
+    }
+    dragEndHandler(_) {
+        console.log("DragEnd");
+    }
+    configure() {
+        this.element.addEventListener("dragstart", this.dragStartHandler.bind(this));
+        this.element.addEventListener("dragend", this.dragEndHandler.bind(this));
+    }
     renderContent() {
         this.element.querySelector("h2").textContent = this.project.title;
-        this.element.querySelector("h3").textContent =
-            this.project.people.toString();
+        this.element.querySelector("h3").textContent = this.persons + " assigned";
         this.element.querySelector("p").textContent = this.project.description;
     }
 }
@@ -128,7 +144,7 @@ class ProjectList extends Component {
         const listEl = document.getElementById(`${this.type}-projects-list`);
         listEl.innerHTML = "";
         for (const prjItem of this.assignedProjects) {
-            new ProjectItem(this.element.querySelector('ul').id, prjItem);
+            new ProjectItem(this.element.querySelector("ul").id, prjItem);
         }
     }
 }
