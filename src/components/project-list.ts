@@ -1,10 +1,8 @@
-import Component from "./base-component.js";
-import { DropTarget } from "../models/drag-drop.js";
-import Project, { ProjectStatus } from "../models/project.js";
-import ProjectItem from "./project-item.js";
-import { projectState } from "../state/project-state.js";
-
-
+import Component from "./base-component";
+import { DropTarget } from "../models/drag-drop";
+import Project, { ProjectStatus } from "../models/project";
+import ProjectItem from "./project-item";
+import { projectState } from "../state/project-state";
 
 export class ProjectList
   extends Component<HTMLDivElement, HTMLElement>
