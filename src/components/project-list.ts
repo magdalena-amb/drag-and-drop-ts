@@ -2,9 +2,9 @@ import Component from "./base-component.js";
 import { DropTarget } from "../models/drag-drop.js";
 import Project, { ProjectStatus } from "../models/project.js";
 import ProjectItem from "./project-item.js";
-import ProjectState from "../state/project-state.js";
+import { projectState } from "../state/project-state.js";
 
-const projectState = ProjectState.getInstance();
+
 
 export class ProjectList
   extends Component<HTMLDivElement, HTMLElement>

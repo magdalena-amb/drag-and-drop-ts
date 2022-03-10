@@ -1,7 +1,6 @@
 import { validate } from "../util/validation.js";
 import Component from "./base-component.js";
-import ProjectState from "../state/project-state.js";
-const projectState = ProjectState.getInstance();
+import { projectState } from "../state/project-state.js";
 class ProjectInput extends Component {
     constructor() {
         super("project-input", "app", true, "user-input");

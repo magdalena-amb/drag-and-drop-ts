@@ -1,4 +1,4 @@
-import Project, { ProjectStatus } from '../models/project.js';
+import Project, { ProjectStatus } from "../models/project.js";
 class State {
     constructor() {
         this.listeners = [];
@@ -37,5 +37,5 @@ class ProjectState extends State {
         }
     }
 }
-export default ProjectState;
+export const projectState = ProjectState.getInstance();
 //# sourceMappingURL=project-state.js.map

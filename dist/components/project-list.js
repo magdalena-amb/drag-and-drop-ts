@@ -1,8 +1,7 @@
 import Component from "./base-component.js";
 import { ProjectStatus } from "../models/project.js";
 import ProjectItem from "./project-item.js";
-import ProjectState from "../state/project-state.js";
-const projectState = ProjectState.getInstance();
+import { projectState } from "../state/project-state.js";
 export class ProjectList extends Component {
     constructor(type) {
         super("project-list", "app", false, `${type}-projects`);

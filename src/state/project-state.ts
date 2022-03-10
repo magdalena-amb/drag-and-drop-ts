@@ -1,8 +1,8 @@
- import Project, { ProjectStatus } from '../models/project.js'
- 
- type Listener<T> = (items: T[]) => void;
+import Project, { ProjectStatus } from "../models/project.js";
 
- class State<T> {
+type Listener<T> = (items: T[]) => void;
+
+class State<T> {
   protected listeners: Listener<T>[] = [];
 
   addListener(listenerFn: Listener<T>) {
@@ -10,7 +10,7 @@
   }
 }
 
- class ProjectState extends State<Project> {
+class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
 
@@ -54,4 +54,4 @@
   }
 }
 
-export default ProjectState;
+export const projectState = ProjectState.getInstance();
